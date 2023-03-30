@@ -1,0 +1,21 @@
+body {
+    font-size: 32px;
+}
+
+main #display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main #button {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+
+main button{
+    padding: 20px;
+    font-size: 32px;
+    border-radius: 5px;
+}
