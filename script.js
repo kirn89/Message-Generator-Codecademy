@@ -1,4 +1,4 @@
-const topic = ['history', 'geography', 'science', 'arts', 'business'];
+//const topic = ['history', 'geography', 'science', 'arts', 'business'];
 const factsOn = {
     historyFacts: ['During World War II, the Soviet Union created an all-female air force unit known as the "Night Witches". These women flew outdated biplanes and would turn off their engines and glide towards their targets to drop bombs, earning them the nickname due to the eerie sound their planes made.',
 'The Great Wall of China was not built all at once, but rather over the course of many centuries. The earliest sections date back to the 7th century BC, while the most famous sections were built during the Ming Dynasty (1368-1644).',
@@ -28,63 +28,52 @@ const randomNumber = (num) => {
 
 
 
-/*
-//select a topic first
-let topicSelectId = randomNumber(factsOn['topic'].length);
-let topicSelected = factsOn['topic'][topicSelectId];
-
-function displayFact () {
-    for ( let field in factsOn) {
-    let selectId = randomNumber(factsOn[field].length);
-    return factsOn[field][selectId];
-    
-    }
-}
-
-switch (topicSelected) {
-    case 'history':
-        document.getElementById("").innerHTML = "YOU CLICKED ME!";
-
-}
-if (topicSelected === 'history') {
-    let optionId = randomNumber(factsOn[historyFacts].length);
-    return factsOn[]
-}
-*/
 const messageOutput = () => {
 
+    const randomFieldName = (object) => {
+        const keys = Object.keys(object);
+        if (keys.length > 0) {
+            const index = Math.floor(keys.length * Math.random());
+              return keys[index];
+        }
+        return null;
+    };
+    const fieldName = randomFieldName(factsOn);
+    console.log(fieldName);
 
+    //for (let fieldName in factsOn) {
+        let optionId = randomNumber(factsOn[fieldName].length);
+        console.log(optionId);
 
-}
-
-function factDisplay() {
-    for (let field in factsOn) {
-        let optionId = randomNumber(factsOn[field].length);
-        //console.log(factsOn[field][optionId]);
-    
-        switch (field) {
+        switch (fieldName) {
             case 'historyFacts' :
-                return factsOn[field][optionId];
-                break;
+                return factsOn[fieldName][optionId];
+                //break;
     
             case 'geographyFacts' :
-                return factsOn[field][optionId];
-                break;
+                return factsOn[fieldName][optionId];
+                //break;
             case 'scienceFacts' :
-                return factsOn[field][optionId];
-                break;
+                return factsOn[fieldName][optionId];
+                //break;
             case 'artsFacts' :
-                return factsOn[field][optionId];
-                break;
+                return factsOn[fieldName][optionId];
+               // break;
             case 'businessFacts' :
-                return factsOn[field][optionId];
-                break;
+                return factsOn[fieldName][optionId];
+                //break;
             default:
                 return 'Error occured';
+        
     
         }
-    }
-    document.getElementById("messageDisplay").innerHTML = messageOutput();
+        
+//}
 }
-//document.getElementById("messageGenerator").onclick = newFact();
+
+
+function factDisplay() {
+    document.getElementById("messageDisplay").innerHTML = messageOutput();
+
+}
 
